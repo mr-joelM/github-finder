@@ -1,14 +1,12 @@
-import Reactm, { Component } from 'react'
+import React, { Component } from 'react'
+import Navbar from './components/layout/Navbar'
 import './App.css'
 
 class App extends Component {
-  
-  const name
-
   render() {
     return (
       <div className="App">
-        <h1>Hello</h1>
+        <Navbar />
       </div>
     )
   }
