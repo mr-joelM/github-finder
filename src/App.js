@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import {
   BrowserRouter as Router,
   Route,
@@ -12,41 +12,36 @@ import User from './components/users/User'
 import Search from './components/users/Search'
 import About from './components/pages/About'
 import GithubState from './context/github/GithubState'
+import AlertState from './context/alert/AlertState'
 import './App.css'
 
 const App = () => {
-  const [alert, setAlert] = useState(null)
-
-  //Set alert message
-  const showAlert = (msg, type) => {
-    setAlert({ msg, type })
-    setTimeout(() => setAlert(null), 5000)
-  }
-
   return (
     <GithubState>
-      <Router>
-        <div className="App">
-          <Navbar />
-          <div className="container">
-            <Alert alert={alert} />
-            <Switch>
-              <Route
-                exact
-                path="/"
-                render={(props) => (
-                  <Fragment>
-                    <Search setAlert={showAlert} />
-                    <Users />
-                  </Fragment>
-                )}
-              />
-              <Route exact path="/about" element={<About />} />
-              <Route exact path="/user/:login" element={<User />} />
-            </Switch>
+      <AlertState>
+        <Router>
+          <div className="App">
+            <Navbar />
+            <div className="container">
+              <Alert />
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  element={
+                    <Fragment>
+                      <Search />
+                      <Users />
+                    </Fragment>
+                  }
+                />
+                <Route exact path="/about" element={<About />} />
+                <Route exact path="/user/:login" element={<User />} />
+              </Switch>
+            </div>
           </div>
-        </div>
-      </Router>
+        </Router>
+      </AlertState>
     </GithubState>
   )
 }
