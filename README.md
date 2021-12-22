@@ -26,7 +26,7 @@ the course was made using react router v5 however since i installed the v6 versi
 
 ## Install and Run locally
 
-To install gamers-parlour-frontend locally, follow these steps:
+To install Github finder locally, follow these steps:
 
 1. Ensure you have the following installed:
    - Node.js (download [here](https://nodejs.org/en/))
@@ -54,6 +54,6 @@ If successful, your browser should open on `http://localhost:3000`
 
 ## Technologies
 
-- [Node.js](https://nodejs.org/en/) v14.17.4 LTS
+- [Node.js](https://nodejs.org/en/) v16.3.0
 - [React.js](https://reactjs.org/) v17.0.2
-- [Axios](https://axios-http.com/) v0.21.1
+- [Axios](https://axios-http.com/) v0.24.0
