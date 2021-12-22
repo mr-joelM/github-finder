@@ -12,7 +12,7 @@ const User = ({ match }) => {
     getUser(match.params.login)
     getUserRepos(match.params.login)
     // eslint-disable-next-line
-  }, [])
+  }, []) // the eslint line is to avoid the warning message that the [] are empty.
 
   const {
     name,
