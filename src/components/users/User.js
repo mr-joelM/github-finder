@@ -1,26 +1,20 @@
 import React, { Fragment, useEffect, useContext } from 'react'
 import Spinner from '../layout/Spinner'
 import Repos from '../repos/Repos'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import GithubContext from '../../context/github/githubContext'
 
-const User = ({ match }) => {
+const User = () => {
   const githubContext = useContext(GithubContext)
   const { getUser, loading, user, repos, getUserRepos } = githubContext
-
-  useEffect(() => {
-    getUser(match.params.login)
-    getUserRepos(match.params.login)
-    // eslint-disable-next-line
-  }, []) // the eslint line is to avoid the warning message that the [] are empty.
-
+  const { login } = useParams()
+  console.log('login =>', login)
   const {
     name,
     avatar_url,
     location,
     bio,
     blog,
-    login,
     html_url,
     company,
     followers,
@@ -29,6 +23,13 @@ const User = ({ match }) => {
     public_gists,
     hireable,
   } = user
+  console.log('user =>', user)
+
+  useEffect(() => {
+    getUser(login)
+    getUserRepos(login)
+    // eslint-disable-next-line
+  }, []) // the eslint line is to avoid the warning message that the [] are empty.
 
   if (loading) return <Spinner />
 
@@ -52,7 +53,7 @@ const User = ({ match }) => {
             style={{ width: '150px' }}
           />
           <h1>{name}</h1>
-          <p>Location: {location}</p>
+          <p>{location}</p>
         </div>
         <div>
           {bio && (

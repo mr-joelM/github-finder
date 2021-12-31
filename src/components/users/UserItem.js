@@ -1,19 +1,19 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-const UserItem = ({ user: { login, avatar_url, html_url } }) => {
+const UserItem = ({ user: { login, avatar_url } }) => {
   return (
     <div className="card text-center">
       <img
         src={avatar_url}
-        alt=""
+        alt="profile pic"
         className="round-img"
         style={{ width: '60px' }}
       />
       <h3>{login}</h3>
       <div>
-        <Link to={`/user/${login}`} className="btn btn-dark btn-sm my-1">
+        <Link className="btn btn-dark btn-sm my-1" to={`/user/${login}`}>
           More
         </Link>
       </div>
@@ -21,8 +21,8 @@ const UserItem = ({ user: { login, avatar_url, html_url } }) => {
   )
 }
 
-UserItem.propTypes = {
-  user: PropTypes.object.isRequired,
-}
+// UserItem.propTypes = {
+//   user: PropTypes.object.isRequired,
+// }
 
 export default UserItem
