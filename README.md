@@ -19,7 +19,7 @@ the course was made using react router v5 however since i installed the v6 versi
 
 ## Links
 
-- A working example of the website hosted on [Netlify](https://github-finder.netlify.app/)
+- A working example of the website hosted on [Netlify](https://githubfindermr-joelm.netlify.app/)
 - The [GitHub link](https://github.com/mr-joelM/github-finder) of Github Finder.
 
 ---
