@@ -384,7 +384,7 @@ table th {
 }
 
 /* Mobile Styles */
-@media (max-width: 00px) {
+@media (max-width: 700px) {
   .hide-sm {
     display: none;
   }
