@@ -3,6 +3,7 @@ import Spinner from '../layout/Spinner'
 import Repos from '../repos/Repos'
 import { Link, useParams } from 'react-router-dom'
 import GithubContext from '../../context/github/githubContext'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const User = () => {
   const githubContext = useContext(GithubContext)
@@ -40,10 +41,21 @@ const User = () => {
       </Link>
       Hireable:{' '}
       {hireable ? (
-        <i className="fas fa-check text-success " />
+        <FontAwesomeIcon
+          icon="fa-solid fa-check text-success"
+          style={{ color: 'rgb(40, 167, 69)' }}
+        />
       ) : (
-        <i className="fas fa-times-circle text-anger" />
+        <FontAwesomeIcon
+          icon="fa-solid fa-xmark"
+          style={{ color: 'rgb(220, 53, 69)' }}
+        />
       )}
+      {/* {hireable ? (
+        <i className="fa-solid fa-check"></i>
+      ) : (
+        <i className="fa-solid fa-xmark"></i>
+      )} */}
       <div className="card grid-2">
         <div className="all-center">
           <img
